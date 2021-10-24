@@ -24,16 +24,28 @@ export default function Mint() {
 
   const [totalSupply, setTotalSupply] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [saleStarted, setSaleStarted] = useState(false);
+  const [privatesaleStarted, setPrivateSaleStarted] = useState(false);
+  const [publicsaleStarted, setPublicSaleStarted] = useState(false);
   const [sndwchPrice, setsndwchPrice] = useState(0);
 
-  const onClick = async () => {
+  const onPublicMint = async () => {
     await mintSndwch(counter);
     setCounter(0);
   };
+
+  const onPrivateMint = async () => {
+    await mintAllowList(counter);
+    setCounter(0);
+  };
   const Increment = () => {
-    if (counter < 3) {
-      setCounter(counter + 1);
+    if(privatesaleStarted){
+      if (counter < 2) {
+        setCounter(counter + 1);
+      }
+    }else{
+      if (counter < 3) {
+        setCounter(counter + 1);
+      }
     }
   };
   const Decrement = () => {
@@ -84,15 +96,18 @@ export default function Mint() {
 
   async function callContractData(wallet) {
     const sndwchContract = new window.web3.eth.Contract(ABI, ADDRESS);
-    const salebool = await sndwchContract;
+    const allowedListActive = await sndwchContract.methods.isAllowListActive().call();
+    const saleActive = await sndwchContract.methods.saleIsActive().call();
     const totalSupply = await sndwchContract.methods.totalSupply().call();
     const Price = await sndwchContract.methods.SndwchPrice().call();
 
     setsndwchContract(sndwchContract);
-    setSaleStarted(salebool);
+    setPrivateSaleStarted(allowedListActive);
+    setPublicSaleStarted(saleActive);
     setTotalSupply(totalSupply);
     setsndwchPrice(Price);
   }
+
   async function mintSndwch(how_many_sndwchs) {
     if (sndwchContract) {
       const price = Number(sndwchPrice) * how_many_sndwchs;
@@ -113,6 +128,26 @@ export default function Mint() {
     }
   }
 
+  async function mintAllowList(how_many_sndwchs) {
+    if (sndwchContract) {
+      const price = Number(sndwchPrice) * how_many_sndwchs;
+      const gasAmount = await sndwchContract.methods
+        .mintAllowList(how_many_sndwchs)
+        .estimateGas({ from: walletAddress, value: price });
+
+      await sndwchContract.methods
+        .mintAllowList(how_many_sndwchs)
+        .send({ from: walletAddress, value: price, gas: String(gasAmount) })
+        .on("transactionHash", function (hash) {
+          console.log("transactionHash", hash);
+          alert("Transaction In Proccess Please Check Metamask For Details");
+        });
+    } else {
+      console.log("Wallet not connected");
+      alert("Wallet not connected");
+    }
+  }
+
   if (typeof window !== "undefined") {
     return (
       <div id="appmain">
@@ -120,7 +155,7 @@ export default function Mint() {
           <Image src={sndwchGif} objectFit="Cover" height={650} width={650} />
         </div>
         <MintModel
-          onClick={window && (signedIn ? onClick : signIn())}
+          onClick={window && ( signedIn ? ( ( privatesaleStarted && !publicsaleStarted ) ? onPrivateMint : onPublicMint ) : signIn())}
           Increment={Increment}
           Decrement={Decrement}
           counter={counter}
