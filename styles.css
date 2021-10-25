@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'ArchivoBlack';
+  src: local('ArchivoBlack'),
+    url(https://fonts.googleapis.com/css?family=ArchivoBlack) format('truetype');
+}
+
+body, html {
+  font-family: 'ArchivoBlack';
+  height: 100%
+}
+
+
+#appmain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+.counter{
+  font-size: 60px;
+}
+
+.creatureGif {
+  height: 300px;
+  width: 300px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin: auto;
+}
+
+@media only screen and (min-width: 800px) {
+  #apps {
+    flex-direction: row;
+  }
+
+  .creatureGif {
+    height: 400px;
+    width: 400px;
+  }
+  
+  .counter{
+    font-size: 100px;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .creatureGif {
+    height: 500px;
+    width: 500px;
+  }
+  
+  .counter{
+    font-size: 120px;
+  }
+}
