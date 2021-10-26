@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { ADDRESS, ABI } from "../config.js";
 import Image from "next/image";
 import MintModel from "../src/components/mintModel";
-import sndwchGif from "../public/img/sndwchGif.gif";
+import banner from "/home/william/BrkfstFront-End-master/public/img/banner.jpg";
 
 export default function Mint() {
   // FOR WALLET
@@ -38,11 +38,11 @@ export default function Mint() {
     setCounter(0);
   };
   const Increment = () => {
-    if(privatesaleStarted){
+    if (privatesaleStarted) {
       if (counter < 2) {
         setCounter(counter + 1);
       }
-    }else{
+    } else {
       if (counter < 3) {
         setCounter(counter + 1);
       }
@@ -96,7 +96,9 @@ export default function Mint() {
 
   async function callContractData(wallet) {
     const sndwchContract = new window.web3.eth.Contract(ABI, ADDRESS);
-    const allowedListActive = await sndwchContract.methods.isAllowListActive().call();
+    const allowedListActive = await sndwchContract.methods
+      .isAllowListActive()
+      .call();
     const saleActive = await sndwchContract.methods.saleIsActive().call();
     const totalSupply = await sndwchContract.methods.totalSupply().call();
     const Price = await sndwchContract.methods.SndwchPrice().call();
@@ -151,11 +153,18 @@ export default function Mint() {
   if (typeof window !== "undefined") {
     return (
       <div id="appmain">
-        <div className="sndwchGif">
-          <Image src={sndwchGif} objectFit="Cover" height={650} width={650} />
-        </div>
+        {/* <div className="banner">
+          <Image src={banner} objectFit="Cover" />
+        </div> */}
         <MintModel
-          onClick={window && ( signedIn ? ( ( privatesaleStarted && !publicsaleStarted ) ? onPrivateMint : onPublicMint ) : signIn())}
+          onClick={
+            window &&
+            (signedIn
+              ? privatesaleStarted && !publicsaleStarted
+                ? onPrivateMint
+                : onPublicMint
+              : signIn())
+          }
           Increment={Increment}
           Decrement={Decrement}
           counter={counter}

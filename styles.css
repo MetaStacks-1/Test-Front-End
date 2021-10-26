@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< HEAD
   font-family: 'ArchivoBlack';
   src: local('ArchivoBlack'),
     url(https://fonts.googleapis.com/css?family=ArchivoBlack) format('truetype');
@@ -9,6 +10,24 @@ body, html {
   height: 100%
 }
 
+=======
+  font-family: "ArchivoBlack";
+  src: local("ArchivoBlack"),
+    url(https://fonts.googleapis.com/css?family=ArchivoBlack) format("truetype");
+}
+
+body,
+html {
+  font-family: "ArchivoBlack";
+  height: 100%;
+}
+body {
+  background-image: url("./public/img/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
 
 #appmain {
   display: flex;
@@ -21,7 +40,11 @@ body, html {
   margin: 0;
 }
 
+<<<<<<< HEAD
 .counter{
+=======
+.counter {
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
   font-size: 60px;
 }
 
@@ -41,20 +64,33 @@ body, html {
     height: 400px;
     width: 400px;
   }
+<<<<<<< HEAD
   
   .counter{
+=======
+
+  .counter {
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
     font-size: 100px;
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
 @media only screen and (min-width: 1200px) {
   .creatureGif {
     height: 500px;
     width: 500px;
   }
+<<<<<<< HEAD
   
   .counter{
+=======
+
+  .counter {
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
     font-size: 120px;
   }
 }

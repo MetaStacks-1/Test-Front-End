@@ -6,7 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+<<<<<<< HEAD
     "next": "latest",
+=======
+    "next": "^12.0.1-canary.1",
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "4.2.0",

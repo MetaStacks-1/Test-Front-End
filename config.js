@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 export const ADDRESS = "0xc36111F031953f67B7f863710c102C995584480A";
+=======
+export const ADDRESS = "0xc777A77109c96Cb187D19028Ac21357f6134190B";
+>>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
 export const ABI = [
   {
     inputs: [
