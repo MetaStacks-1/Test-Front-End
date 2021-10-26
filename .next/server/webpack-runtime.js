@@ -30,11 +30,7 @@
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
-<<<<<<< HEAD
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-=======
 /******/ 			__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
->>>>>>> 411097a79a402695f71ac197566a3e11118dbf58
 /******/ 			threw = false;
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
