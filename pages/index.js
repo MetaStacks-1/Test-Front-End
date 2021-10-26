@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { ADDRESS, ABI } from "../config.js";
 import Image from "next/image";
 import MintModel from "../src/components/mintModel";
-import banner from "/public/img/banner.jpg";
+import banner from "/home/william/BrkfstFront-End-master/public/img/banner.jpg";
 
 export default function Mint() {
   // FOR WALLET
@@ -153,9 +153,9 @@ export default function Mint() {
   if (typeof window !== "undefined") {
     return (
       <div id="appmain">
-        <div className="banner">
+        {/* <div className="banner">
           <Image src={banner} objectFit="Cover" />
-        </div>
+        </div> */}
         <MintModel
           onClick={
             window &&

@@ -1,14 +1,20 @@
 @font-face {
-  font-family: 'ArchivoBlack';
-  src: local('ArchivoBlack'),
-    url(https://fonts.googleapis.com/css?family=ArchivoBlack) format('truetype');
+  font-family: "ArchivoBlack";
+  src: local("ArchivoBlack"),
+    url(https://fonts.googleapis.com/css?family=ArchivoBlack) format("truetype");
 }
 
-body, html {
-  font-family: 'ArchivoBlack';
-  height: 100%
+body,
+html {
+  font-family: "ArchivoBlack";
+  height: 100%;
 }
-
+body {
+  background-image: url("./public/img/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 #appmain {
   display: flex;
@@ -21,7 +27,7 @@ body, html {
   margin: 0;
 }
 
-.counter{
+.counter {
   font-size: 60px;
 }
 
@@ -41,20 +47,19 @@ body, html {
     height: 400px;
     width: 400px;
   }
-  
-  .counter{
+
+  .counter {
     font-size: 100px;
   }
 }
-
 
 @media only screen and (min-width: 1200px) {
   .creatureGif {
     height: 500px;
     width: 500px;
   }
-  
-  .counter{
+
+  .counter {
     font-size: 120px;
   }
 }
