@@ -2,8 +2,7 @@ import { useState } from "react";
 import Mint from "./mint";
 import Arrow from "./arrow";
 
-import { AiFillCaretUp } from "react-icons/ai";
-import { AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import Web3 from "web3";
 
 export default function MintModel({
