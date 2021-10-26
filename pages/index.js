@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { ADDRESS, ABI } from "../config.js";
 import Image from "next/image";
 import MintModel from "../src/components/mintModel";
-import banner from "/home/william/BrkfstFront-End-master/public/img/banner.jpg";
+import banner from "/Users/kev/Code/BrkfstFront-End/public/img/banner.jpg";
 
 export default function Mint() {
   // FOR WALLET

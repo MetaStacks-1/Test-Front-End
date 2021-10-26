@@ -8,9 +8,17 @@ body,
 html {
   font-family: "ArchivoBlack";
   height: 100%;
+  overflow-y: hidden;
 }
 
-#__next {
+ #__next{
+   height: 100vh !important;
+   display: flex;
+   flex-direction: column;
+   justify-content: end;
+ }
+
+body {
   background-image: url("./public/img/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
