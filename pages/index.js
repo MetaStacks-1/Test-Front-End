@@ -153,9 +153,6 @@ export default function Mint() {
   if (typeof window !== "undefined") {
     return (
       <div id="appmain">
-        {/* <div className="banner">
-          <Image src={banner} objectFit="Cover" />
-        </div> */}
         <MintModel
           onClick={
             window &&

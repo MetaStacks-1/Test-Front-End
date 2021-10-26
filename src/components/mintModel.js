@@ -17,9 +17,9 @@ export default function MintModel({
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
-        height: '100vh'
+        padding: "10px"
       }}
     >
       <div
