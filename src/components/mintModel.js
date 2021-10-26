@@ -56,7 +56,7 @@ export default function MintModel({
               padding: "0",
             }}
           >
-            price: .07ETH
+            price: .06969ETH
           </div>
         </div>
 
