@@ -1,25 +1,21 @@
-@font-face {
-  font-family: "ArchivoBlack";
-  src: local("ArchivoBlack"),
-    url(https://fonts.googleapis.com/css?family=ArchivoBlack) format("truetype");
-}
-
 body,
 html {
-  font-family: "ArchivoBlack";
+  font-family: 'Barlow', sans-serif;
   height: 100%;
   overflow-y: hidden;
+  background-color: #eadeac;
 }
 
  #__next{
    height: 100vh !important;
+   width: 100vw !important;
    display: flex;
    flex-direction: column;
-   justify-content: end;
+   justify-content: flex-end;
  }
 
 body {
-  background-image: url("./public/img/banner.jpg");
+  background-image: url("./public/img/mintmobile.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -52,10 +48,10 @@ body {
     flex-direction: row;
   }
 
-  .creatureGif {
-    height: 400px;
-    width: 400px;
+  body {
+    background-image: url("./public/img/minttablet.png");
   }
+
 
   .counter {
     font-size: 100px;
@@ -63,9 +59,8 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
-  .creatureGif {
-    height: 500px;
-    width: 500px;
+  body {
+    background-image: url("./public/img/mintdesktop.png");
   }
 
   .counter {

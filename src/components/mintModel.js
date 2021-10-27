@@ -18,7 +18,7 @@ export default function MintModel({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "10px"
+        padding: "0 0 20px 0"
       }}
     >
       <div
@@ -40,7 +40,7 @@ export default function MintModel({
               margin: "0",
             }}
           >
-            {counter}
+            {counter === 6970 ? "Sold Out": counter}
           </h1>
           <Mint onClick={onClick} />
           <div
@@ -50,13 +50,14 @@ export default function MintModel({
           >
             {totalSupply} out of 6,969
           </div>
-          <div
+          <h4
             style={{
               padding: "0",
+              margin: "0"
             }}
           >
             price: .06969ETH
-          </div>
+          </h4>
         </div>
 
         <div
