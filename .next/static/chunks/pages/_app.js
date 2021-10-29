@@ -112,7 +112,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "static/media/mintdesktop.8ec0691e.png";
+module.exports = __webpack_require__.p + "static/media/mintdesktop.b846fdcf.png";
 
 /***/ }),
 
@@ -123,7 +123,7 @@ module.exports = __webpack_require__.p + "static/media/mintdesktop.8ec0691e.png"
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "static/media/mintmobile.55b51eba.png";
+module.exports = __webpack_require__.p + "static/media/mintmobile.fb62fa86.png";
 
 /***/ }),
 
@@ -134,7 +134,7 @@ module.exports = __webpack_require__.p + "static/media/mintmobile.55b51eba.png";
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "static/media/minttablet.0278c17e.png";
+module.exports = __webpack_require__.p + "static/media/minttablet.c5b09678.png";
 
 /***/ })
 
