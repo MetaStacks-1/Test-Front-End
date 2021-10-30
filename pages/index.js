@@ -160,12 +160,7 @@ export default function Mint() {
         </Head>
         <MintModel
           onClick={
-            window &&
-            (signedIn
-              ? privatesaleStarted && !publicsaleStarted
-                ? onPrivateMint
-                : onPublicMint
-              : signIn())
+            signedIn ? onPublicMint : signIn()
           }
           Increment={Increment}
           Decrement={Decrement}
