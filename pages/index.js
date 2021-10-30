@@ -68,7 +68,7 @@ export default function Mint() {
           // checks if connected network is mainnet (change this to rinkeby if you wanna test on testnet)
           .then((network) => {
             console.log(network)
-            if (network != 'mainnet') {
+            if (network != 'live') {
               alert(
                 'You are on ' +
                   network +
