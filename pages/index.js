@@ -29,8 +29,10 @@ export default function Mint() {
   const [sndwchPrice, setsndwchPrice] = useState(0)
 
   const onPublicMint = async () => {
-    await mintSndwch(counter)
-    setCounter(0)
+    if(counter > 0){
+      await mintSndwch(counter)
+      setCounter(0)
+    }
   }
 
   const onPrivateMint = async () => {
