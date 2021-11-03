@@ -112,6 +112,7 @@ export default function Mint() {
 
   async function mintSndwch(how_many_sndwchs) {
     if (sndwchContract) {
+      console.log('hello')
       const price = Number(sndwchPrice) * how_many_sndwchs
       const gasAmount = await sndwchContract.methods
         .mintSndwch(how_many_sndwchs)
@@ -154,19 +155,22 @@ export default function Mint() {
     return (
       <div id="appmain">
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-          <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap" rel="stylesheet"/>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <MintModel
-          onClick={
-            signedIn ? onPublicMint : signIn()
-          }
-          Increment={Increment}
-          Decrement={Decrement}
-          counter={counter}
-          totalSupply={totalSupply}
-        />
+          <MintModel
+            signIn={signIn}
+            signedIn={signedIn}
+            onClick={onPublicMint}
+            Increment={Increment}
+            Decrement={Decrement}
+            counter={counter}
+            totalSupply={totalSupply}
+          />
       </div>
     )
   }
